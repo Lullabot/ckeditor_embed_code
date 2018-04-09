@@ -24,4 +24,4 @@ In Configuration > Text formats and editors:
 
 ![Embedded iframe in the WYSIWYG](images/enable-embed-code-filter.png "Embedded iframe in the WYSIWYG")
 
-This filters creates the iframe HTML node, setting the src attribute, a style to correctly display the width and height, and the [sandbox attribute](https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox) with the values: 'allow-same-origin allow-forms allow-scripts'
+This filter creates the iframe HTML node, setting the src attribute, a style to correctly display the width and height, and the [sandbox attribute](https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox) with the values: 'allow-same-origin allow-forms allow-scripts'
