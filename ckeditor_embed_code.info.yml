@@ -1,0 +1,6 @@
+name: CKEditor Embed Code
+type: module
+description: 'A CKEditor plugin for Drupal 8 to safely embed code like an iframe.'
+core: '8.x'
+dependencies:
+- embed
