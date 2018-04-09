@@ -46,6 +46,14 @@ class EmbedCodeFilter extends FilterBase {
     return $result;
   }
 
+  /**
+   * Creates a new DOM node and configures it using the values from the text.
+   * 
+   * @param $dom
+   * @param $text
+   *
+   * @return \DOMElement
+   */
   protected function buildNode($dom, $text) {
     $subdom = Html::load($text);
     $xpath = new \DOMXPath($subdom);
