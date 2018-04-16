@@ -19,15 +19,17 @@ class EmbedCodeFilter extends FilterBase {
 
   use DomHelperTrait;
 
+  const CLASS_VALUE = 'embedcode';
+
   public function process($text, $langcode) {
     $result = new FilterProcessResult($text);
 
-    // Check that there is some 'embedcode' (the class value) in the text.
-    if (strpos($text, 'embedcode') !== FALSE) {
+    // Check that there are elements with the embedded class value in the text.
+    if (strpos($text, self::CLASS_VALUE) !== FALSE) {
       $dom = Html::load($text);
       $xpath = new \DOMXPath($dom);
 
-      foreach ($xpath->query("//div[contains(@class, 'embedcode')]") as $div) {
+      foreach ($xpath->query("//div[contains(@class, " . self::CLASS_VALUE . ")]") as $div) {
         /** @var \DOMElement $div */
         $code = $div->nodeValue;
         $div->nodeValue = '';
@@ -48,7 +50,7 @@ class EmbedCodeFilter extends FilterBase {
 
   /**
    * Creates a new DOM node and configures it using the values from the text.
-   * 
+   *
    * @param $dom
    * @param $text
    *
